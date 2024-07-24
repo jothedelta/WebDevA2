@@ -29,3 +29,21 @@ show(2);
 page3btn.addEventListener("click", function () {
 show(3);
 });
+
+
+
+$(document).ready(function() {
+    $(window).on('scroll', function() {
+      $('.slide-in-left').each(function() {
+        var elementTop = $(this).offset().top;
+        var windowBottom = $(window).scrollTop() + $(window).height();
+  
+        if (elementTop < windowBottom) {
+          $(this).css({
+            left: '0',
+            opacity: '1'
+          });
+        }
+      });
+    });
+});
